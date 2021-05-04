@@ -1,0 +1,62 @@
+﻿<Page x:Class="SApp.Pages.NewsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1400"
+      Title="NewsPage">
+
+    <Page.Resources>
+        <Style TargetType="Rectangle">
+            <Setter Property="Fill" 
+                    Value="Transparent" />
+            <Setter Property="StrokeThickness" 
+                    Value="5" />
+            <Setter Property="Stroke" 
+                    Value="#5ab9ea" />
+            <Setter Property="RadiusX" 
+                    Value="20" />
+            <Setter Property="RadiusY" 
+                    Value="20" />
+        </Style>
+    </Page.Resources>
+
+
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <Rectangle Height="450" 
+                   Width="600" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"/>
+        <Grid HorizontalAlignment="Right"  
+              Width="700"
+              Margin="0,0,30,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Rectangle Height="450" 
+                       Width="300"
+                       Grid.Column="0"/>
+            <Rectangle Height="450" 
+                       Width="300"
+                       Grid.Column="1"
+                       />
+        </Grid>
+
+        <TextBlock Text="Slider" FontSize="40" 
+                   Grid.Row="1" Margin="700,122,-700,-122" />
+
+    </Grid>
+</Page>

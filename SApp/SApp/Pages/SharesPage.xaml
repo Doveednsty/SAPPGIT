@@ -1,0 +1,66 @@
+﻿<Page x:Class="SApp.Pages.SharesPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1400"
+      Title="SharesPage"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid Margin="67,47,0,0" Grid.ColumnSpan="2" >
+            
+            <Button
+                x:Name="Refresh_btn"
+                Content="Обновить данные" 
+                VerticalAlignment="Bottom" 
+                Width="200"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1"
+   
+                BorderThickness="0"
+                Background="#00c21d"
+                Margin="0,0,72,60"
+                Click="Refresh_btn_Click"
+                HorizontalAlignment="Right">
+
+
+
+
+            </Button>
+
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Акции компаний Российской Федерации (MOEX)" 
+                           FontSize="20"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+
+
+                <DataGrid x:Name="SharesDG" 
+                     Grid.Row="1"
+                     Width="1200"
+                     Height="700"
+                     Margin="0,0,0,110"
+                     HorizontalGridLinesBrush="#5ab9ea" 
+                     VerticalGridLinesBrush="#5ab9ea" 
+                     IsReadOnly="True" FontSize="16"
+                     ItemsSource="{Binding}"
+                     ColumnWidth="*" RowHeight="40">
+
+
+                </DataGrid>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>
