@@ -73,7 +73,6 @@ namespace SApp.Pages
         private void AllTimebtn_MouseEnter(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             AllTimebtn.Background = (Brush)bc.ConvertFrom("#5ab9ea");
             AllTimebtn.Foreground = (Brush)bc.ConvertFrom("#f0f0f0");
         }
@@ -81,7 +80,6 @@ namespace SApp.Pages
         private void AllTimebtn_MouseLeave(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             AllTimebtn.Background = Brushes.Transparent;
             AllTimebtn.Foreground = (Brush)bc.ConvertFrom("#252525");
         }
@@ -89,7 +87,6 @@ namespace SApp.Pages
         private void Yearbtn_MouseEnter(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             Yearbtn.Foreground = (Brush)bc.ConvertFrom("#f0f0f0");
             Yearbtn.Background = (Brush)bc.ConvertFrom("#5ab9ea");
             
@@ -98,7 +95,6 @@ namespace SApp.Pages
         private void Yearbtn_MouseLeave(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             Yearbtn.Background = Brushes.Transparent;
             Yearbtn.Foreground = (Brush)bc.ConvertFrom("#252525");
         }
@@ -106,7 +102,6 @@ namespace SApp.Pages
         private void SixMonthbtn_MouseEnter(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             SixMonthbtn.Foreground = (Brush)bc.ConvertFrom("#f0f0f0");
             SixMonthbtn.Background = (Brush)bc.ConvertFrom("#5ab9ea");
         }
@@ -114,7 +109,6 @@ namespace SApp.Pages
         private void SixMonthbtn_MouseLeave(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             SixMonthbtn.Background = Brushes.Transparent;
             SixMonthbtn.Foreground = (Brush)bc.ConvertFrom("#252525");
         }
@@ -122,7 +116,6 @@ namespace SApp.Pages
         private void ThreeMonthbtn_MouseEnter(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             ThreeMonthbtn.Foreground = (Brush)bc.ConvertFrom("#f0f0f0");
             ThreeMonthbtn.Background = (Brush)bc.ConvertFrom("#5ab9ea");
         }
@@ -130,7 +123,6 @@ namespace SApp.Pages
         private void ThreeMonthbtn_MouseLeave(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             ThreeMonthbtn.Background = Brushes.Transparent;
             ThreeMonthbtn.Foreground = (Brush)bc.ConvertFrom("#252525");
         }
@@ -138,7 +130,6 @@ namespace SApp.Pages
         private void Monthbtn_MouseLeave(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             Monthbtn.Background = Brushes.Transparent;
             Monthbtn.Foreground = (Brush)bc.ConvertFrom("#252525");
         }
@@ -146,7 +137,6 @@ namespace SApp.Pages
         private void Monthbtn_MouseEnter(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             Monthbtn.Foreground = (Brush)bc.ConvertFrom("#f0f0f0");
             Monthbtn.Background = (Brush)bc.ConvertFrom("#5ab9ea");
         }
@@ -154,7 +144,6 @@ namespace SApp.Pages
         private void Weekbtn_MouseEnter(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             Weekbtn.Foreground = (Brush)bc.ConvertFrom("#f0f0f0");
             Weekbtn.Background = (Brush)bc.ConvertFrom("#5ab9ea");
         }
@@ -162,7 +151,6 @@ namespace SApp.Pages
         private void Weekbtn_MouseLeave(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             Weekbtn.Background = Brushes.Transparent;
             Weekbtn.Foreground = (Brush)bc.ConvertFrom("#252525");
         }
@@ -170,7 +158,6 @@ namespace SApp.Pages
         private void Daybtn_MouseEnter(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             Daybtn.Foreground = (Brush)bc.ConvertFrom("#f0f0f0");
             Daybtn.Background = (Brush)bc.ConvertFrom("#5ab9ea");
         }
@@ -178,7 +165,6 @@ namespace SApp.Pages
         private void Daybtn_MouseLeave(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             Daybtn.Background = Brushes.Transparent;
             Daybtn.Foreground = (Brush)bc.ConvertFrom("#252525");
         }
@@ -186,7 +172,6 @@ namespace SApp.Pages
         private void AtNowbtn_MouseLeave(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             AtNowbtn.Background = Brushes.Transparent;
             AtNowbtn.Foreground = (Brush)bc.ConvertFrom("#252525");
         }
@@ -194,7 +179,6 @@ namespace SApp.Pages
         private void AtNowbtn_MouseEnter(object sender, MouseEventArgs e)
         {
             var bc = new BrushConverter();
-            var fc = new BrushConverter();
             AtNowbtn.Foreground = (Brush)bc.ConvertFrom("#f0f0f0");
             AtNowbtn.Background = (Brush)bc.ConvertFrom("#5ab9ea");
         }

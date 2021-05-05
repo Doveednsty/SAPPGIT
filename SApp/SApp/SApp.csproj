@@ -107,8 +107,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TrackingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\TrackingPage.xaml.cs">
+      <DependentUpon>TrackingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -141,6 +148,7 @@
     <Resource Include="Assets\analyzeicon.png" />
     <Resource Include="Assets\newsicon.png" />
     <Resource Include="Data\Secidforcb.txt" />
+    <Resource Include="Assets\trackingicon.png" />
     <Content Include="getshares.exe" />
     <Resource Include="Assets\icon256256.png" />
     <Content Include="Scripts\getshares.py" />

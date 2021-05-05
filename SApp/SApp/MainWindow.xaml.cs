@@ -59,5 +59,10 @@ namespace SApp
         {
             Basis.Content = new SharesPage();
         }
+
+        private void TrackingPage_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Basis.Content = new TrackingPage();
+        }
     }
 }

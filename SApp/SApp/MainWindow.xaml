@@ -75,10 +75,22 @@
                 <Button BorderThickness="0"
                         Height="35"
                         x:Name="NewsPage_btn"
-                        Click="NewsPage_btn_Click">
+                        Click="NewsPage_btn_Click"
+                        Margin="0,0,0,50">
                     <Button.Background>
                         <ImageBrush 
                             ImageSource="Assets/newsicon.png" 
+                            Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+
+                <Button BorderThickness="0"
+                        Height="40"
+                        x:Name="TrackingPage_btn"
+                        Click="TrackingPage_btn_Click">
+                    <Button.Background>
+                        <ImageBrush 
+                            ImageSource="Assets/trackingicon.png" 
                             Stretch="Uniform"/>
                     </Button.Background>
                 </Button>

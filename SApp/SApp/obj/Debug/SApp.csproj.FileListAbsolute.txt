@@ -70,3 +70,5 @@ E:\SAPPGIT\SApp\SApp\obj\Debug\SApp.csproj.CoreCompileInputs.cache
 E:\SAPPGIT\SApp\SApp\obj\Debug\SApp.csproj.CopyComplete
 E:\SAPPGIT\SApp\SApp\obj\Debug\SApp.exe
 E:\SAPPGIT\SApp\SApp\obj\Debug\SApp.pdb
+E:\SAPPGIT\SApp\SApp\obj\Debug\Pages\TrackingPage.g.cs
+E:\SAPPGIT\SApp\SApp\obj\Debug\Pages\TrackingPage.baml

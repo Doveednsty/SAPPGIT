@@ -22,7 +22,7 @@
 
     <Grid>
 
-        <Grid Margin="50,0,0,0">
+        <Grid Margin="50,35,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
@@ -169,7 +169,11 @@
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
                     Margin="0,0,70,10"
-                    Content="Отслеживать"
+                    Background="Transparent"
+                    BorderBrush="#5ab9ea"
+                    Foreground="#252525"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                    Content="Показать"
                     Grid.Row="0"
                     x:Name="Calc_btn"
                     Click="Calc_btn_Click">
