@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\repos2\SApp\SApp\obj\Release\
+E:\SAPPGIT\SApp\SApp\obj\Release\
 SApp
 none
 false
 TRACE
-E:\repos2\SApp\SApp\App.xaml
+E:\SAPPGIT\SApp\SApp\App.xaml
 4-1670491659
 2-1141123314
 10-157112451
-18-880609893
+18-1622658851
 MainWindow.xaml;Pages\AnalyticsPage.xaml;Pages\NewsPage.xaml;Pages\SharesPage.xaml;
 
-False
+True
 
