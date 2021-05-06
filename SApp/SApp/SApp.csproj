@@ -74,6 +74,7 @@
     </ApplicationDefinition>
     <Compile Include="Data\DataShares.cs" />
     <Compile Include="Data\Share.cs" />
+    <Compile Include="Help Classes\Chart.cs" />
     <Compile Include="Pages\AnalyticsPage.xaml.cs">
       <DependentUpon>AnalyticsPage.xaml</DependentUpon>
     </Compile>

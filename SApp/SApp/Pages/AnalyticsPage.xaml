@@ -81,6 +81,7 @@
                                 MouseLeave="AllTimebtn_MouseLeave"
                                 Margin="0,0,60,0"
                                 BorderThickness="0"
+                                Click="AllTimebtn_Click"
                                 Background="Transparent"
                                 Foreground="#252525">
                                 

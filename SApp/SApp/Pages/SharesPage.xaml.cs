@@ -30,14 +30,55 @@ namespace SApp.Pages
             DataContext = dataShares.ReadFile(@"E:\repos2\SApp\SApp\Scripts\Table.csv");
         }
 
-        private void Refresh_btn_Click(object sender, RoutedEventArgs e)
+
+        public bool isHaveProcess(string pName)
         {
+            Process[] pList = Process.GetProcessesByName("notepad");
+            foreach (Process myProcess in pList)
+            {
+                if (myProcess.ProcessName == pName)
+                    return true;
+            }
+            return false;
+        }
+
+
+        private async void Refresh_btn_Click(object sender, RoutedEventArgs e)
+        {
+            await Task.Run(async () =>
+            {
+                while (true)
+                {
+
+                Process.Start("notepad");
+                await Task.Delay(1000);
+                }
+            });
             
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             
+            await Task.Run(() =>
+            {
+                //if (isHaveProcess("notepad.exe") == false)
+                //{
+                //    Process.Start("notepad.exe");
+                //}
+                //proc.Kill("notepad.exe");
+                //proc.Start("notepad.exe");
+
+                
+                //foreach (Process proc in Process.GetProcessesByName("notepad"))
+                //{
+                //    proc.Kill();
+                //}
+               
+
+
+            }
+            );
         }
            
     }
