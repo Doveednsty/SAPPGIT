@@ -35,6 +35,7 @@ namespace SApp
             {
                 proc.Kill();
             }
+            
         }
 
         private void AnalysPage_btn_Click(object sender, RoutedEventArgs e)
@@ -64,5 +65,7 @@ namespace SApp
         {
             Basis.Content = new TrackingPage();
         }
+
+        
     }
 }

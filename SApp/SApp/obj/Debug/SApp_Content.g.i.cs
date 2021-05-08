@@ -9,6 +9,5 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("getshares.exe")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("scripts/getshares.py")]
 
 

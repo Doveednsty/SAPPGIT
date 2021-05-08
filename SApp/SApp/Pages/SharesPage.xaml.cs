@@ -27,59 +27,48 @@ namespace SApp.Pages
         {
             InitializeComponent();
             DataShares dataShares = new DataShares();
-            DataContext = dataShares.ReadFile(@"E:\repos2\SApp\SApp\Scripts\Table.csv");
+            DataContext = dataShares.ReadFile("Table.csv");
         }
 
 
-        public bool isHaveProcess(string pName)
+        async void RefreshingShares() // !!!Parllel Invoke should be!!!!
         {
-            Process[] pList = Process.GetProcessesByName("notepad");
-            foreach (Process myProcess in pList)
-            {
-                if (myProcess.ProcessName == pName)
-                    return true;
-            }
-            return false;
-        }
-
-
-        private async void Refresh_btn_Click(object sender, RoutedEventArgs e)
-        {
+            var time = 900 * 1000; //15 minute
             await Task.Run(async () =>
             {
-                while (true)
+                while (true) 
                 {
-
-                Process.Start("notepad");
-                await Task.Delay(1000);
+                    Thread.CurrentThread.IsBackground = true;
+                    Process.Start("getshares");
+                    await Task.Delay(time);
+                    foreach(Process process in Process.GetProcessesByName("getshares"))
+                    {
+                        process.Kill();
+                    }
                 }
-            });
-            
-        }
-
-        private async void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-            await Task.Run(() =>
-            {
-                //if (isHaveProcess("notepad.exe") == false)
-                //{
-                //    Process.Start("notepad.exe");
-                //}
-                //proc.Kill("notepad.exe");
-                //proc.Start("notepad.exe");
-
                 
-                //foreach (Process proc in Process.GetProcessesByName("notepad"))
-                //{
-                //    proc.Kill();
-                //}
-               
-
-
-            }
-            );
+                
+            });
         }
-           
+
+
+
+        private void Refresh_btn_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Process process in Process.GetProcessesByName("getshares"))
+            {
+                process.Kill();
+            }
+            Process.Start("getshares");
+            Thread.Sleep(1000);
+            MessageBox.Show("Данные успешно обновлены", "Обновление данных", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            RefreshingShares();
+        }
+
+        
     }
 }

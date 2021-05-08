@@ -139,7 +139,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Scripts\Table.csv" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -152,7 +151,6 @@
     <Resource Include="Assets\trackingicon.png" />
     <Content Include="getshares.exe" />
     <Resource Include="Assets\icon256256.png" />
-    <Content Include="Scripts\getshares.py" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
