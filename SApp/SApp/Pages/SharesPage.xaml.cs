@@ -31,7 +31,7 @@ namespace SApp.Pages
         }
 
 
-        async void RefreshingShares() // !!!Parllel Invoke should be!!!!
+        async void RefreshingShares() // !!!Parallel Invoke should be!!!!
         {
             var time = 900 * 1000; //15 minute
             await Task.Run(async () =>

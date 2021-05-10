@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,14 +33,12 @@ namespace SApp.Pages
 
 
         public SeriesCollection SeriesCollection { get; set; }
-        public string[] Labels { get; set; }
+        public List<string> Labels { get; set; }
         public Func<double, string> YFormatter { get; set; }
 
 
         private void Calc_btn_Click(object sender, RoutedEventArgs e) 
         {
-            
-
             
         }
 
@@ -47,7 +46,7 @@ namespace SApp.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            List<string> lines = File.ReadAllLines("E:/repos2/SApp/SApp/Data/Secidforcb.txt").ToList();
+            List<string> lines = File.ReadAllLines(Directory.GetCurrentDirectory() + "/Data/Secidforcb.txt").ToList();
             ChooseShareCB.ItemsSource = lines;
         }
 
@@ -164,6 +163,63 @@ namespace SApp.Pages
             AtNowbtn.Background = (Brush)bc.ConvertFrom("#5ab9ea");
         }
 
+
+
+
+
+        public string YearStart(string filepath)
+        {
+            //var file = Directory.GetCurrentDirectory() + "/Data/ACKO1.csv";
+            var lines = System.IO.File.ReadAllLines(filepath); // @"E:\SAPPGIT\SApp\SApp\Data\ACKO1.csv"
+            var line = lines[0];
+            string element = line[10] + "" + line[11] + "" + line[12] + "" + line[13] + "";
+
+            char[] symbol = line.ToCharArray();
+            int j = 0;
+            string s = " ";
+            for (int i = 0; i < symbol.Length; i++)
+            {
+                if (symbol[i].CompareTo(',') == 0)
+                {
+                    j++;
+                    if (j == 2)
+                    {
+                        s = symbol[i + 1] + "" + symbol[i + 2] + "" + symbol[i + 3] + "" + symbol[i + 4];
+                        break;
+                    }
+                }
+            }
+            //string element = line[10] + "" + line[11] + "" + line[12] + "" + line[13] + "";
+            //MessageBox.Show(element);
+            return s;
+        }
+
+        public string YearEnd(string filepath)
+        {
+            //var file = Directory.GetCurrentDirectory() + "/Data/ACKO1.csv";
+            var lines = System.IO.File.ReadAllLines(filepath); // @"E:\SAPPGIT\SApp\SApp\Data\ACKO1.csv"
+            var line = lines.Last();
+            char[] symbol = line.ToCharArray();
+            int j = 0;
+            string s = " ";
+            for (int i = 0; i < symbol.Length; i++)
+            {
+                if (symbol[i].CompareTo(',') == 0)
+                {
+                    j++;
+                    if (j == 2)
+                    {
+                        s = symbol[i + 1] + "" + symbol[i + 2] + "" + symbol[i + 3] + "" + symbol[i + 4];
+                        break;
+                    }
+                }
+            }
+            //string element = line[10] + "" + line[11] + "" + line[12] + "" + line[13] + "";
+            //MessageBox.Show(element);
+            return s;
+        }
+
+
         private void AllTimebtn_Click(object sender, RoutedEventArgs e)
         {
 
@@ -172,20 +228,36 @@ namespace SApp.Pages
                 new LineSeries
                 {
                     Title = (string)ChooseShareCB.SelectedItem,
-                    Values = new ChartValues<double>{ }// вот тут должны быть значения акций --> ?LINQ?
+                    Values = new ChartValues<double>{ 2, 5, 7, 4, 3, 5 }// вот тут должны быть значения акций --> ?LINQ?
                     
                 },
 
             };
 
-            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
+            int yearStart = Convert.ToInt32(YearStart("E:/SAPPGIT/SApp/SApp/Data/ACKO1.csv"));
+            int yearEnd = Convert.ToInt32(YearEnd("E:/SAPPGIT/SApp/SApp/Data/ACKO36.csv"));
+
+
+
+
+            //Labels = new[] { yearStart.ToString(), "Feb", "Mar", "Apr", yearEnd.ToString() };
+            Labels = new List<string>();
+            int j = yearStart;
+            for (int i = yearStart - 1; i < yearEnd; i++)
+            {
+                if (i < yearEnd)
+                {
+                    Labels.Add((i + 1).ToString());
+                }
+            }
+
             YFormatter = value => value.ToString("C");
 
             //modifying the series collection will animate and update the chart
 
 
             //modifying any series values will also animate and update the chart
-            SeriesCollection[0].Values.Add(1001d);
+            //SeriesCollection[0].Values.Add(1001d);
 
             DataContext = this;
         }

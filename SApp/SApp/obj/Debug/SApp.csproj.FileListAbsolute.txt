@@ -55,7 +55,6 @@ E:\SAPPGIT\SApp\SApp\obj\Debug\Pages\AnalyticsPage.g.cs
 E:\SAPPGIT\SApp\SApp\obj\Debug\Pages\NewsPage.g.cs
 E:\SAPPGIT\SApp\SApp\obj\Debug\Pages\SharesPage.g.cs
 E:\SAPPGIT\SApp\SApp\obj\Debug\App.g.cs
-E:\SAPPGIT\SApp\SApp\obj\Debug\SApp_Content.g.cs
 E:\SAPPGIT\SApp\SApp\obj\Debug\SApp_MarkupCompile.cache
 E:\SAPPGIT\SApp\SApp\obj\Debug\SApp_MarkupCompile.lref
 E:\SAPPGIT\SApp\SApp\obj\Debug\App.baml

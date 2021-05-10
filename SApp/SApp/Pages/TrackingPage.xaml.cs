@@ -26,7 +26,7 @@ namespace SApp.Pages
         public TrackingPage()
         {
             InitializeComponent();
-            List<string> lines = File.ReadAllLines("E:/repos2/SApp/SApp/Data/Secidforcb.txt").ToList();
+            List<string> lines = File.ReadAllLines(Directory.GetCurrentDirectory() + "/Data/Secidforcb.txt").ToList();
             ChooseShareCB.ItemsSource = lines;
         }
 
