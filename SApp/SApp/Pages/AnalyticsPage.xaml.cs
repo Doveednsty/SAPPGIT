@@ -39,7 +39,8 @@ namespace SApp.Pages
 
         private void Calc_btn_Click(object sender, RoutedEventArgs e) 
         {
-            
+            var w = Average(Directory.GetCurrentDirectory() + "Data/ACKO1.csv");
+            MessageBox.Show(w);
         }
 
         
@@ -164,7 +165,29 @@ namespace SApp.Pages
         }
 
 
-
+        public string Average(string filepath) // доделать вот это, чтобы среденее арифметическое сделать
+        {
+            //int j = 0;
+            string s = " ";
+            var lines = System.IO.File.ReadAllLines(filepath); // @"E:\SAPPGIT\SApp\SApp\Data\ACKO1.csv"
+            for (int i = 0; i < lines.Length; i++)
+            {  
+                string line = lines[i];
+                char[] symbol = line.ToCharArray();
+                if (line.Contains(YearStart(filepath)))
+                {
+                    for (int g = 0; g < symbol.Length; g++)
+                    {
+                        if (symbol[g].CompareTo(',') == 0)
+                        {
+                            s = symbol[i + 1] + "" + symbol[i + 2] + "" + symbol[i + 3] + "" + symbol[i + 4];
+                            
+                        }
+                    }
+                }
+            }
+            return Convert.ToString(s);
+        }
 
 
         public string YearStart(string filepath)
@@ -172,7 +195,6 @@ namespace SApp.Pages
             //var file = Directory.GetCurrentDirectory() + "/Data/ACKO1.csv";
             var lines = System.IO.File.ReadAllLines(filepath); // @"E:\SAPPGIT\SApp\SApp\Data\ACKO1.csv"
             var line = lines[0];
-            string element = line[10] + "" + line[11] + "" + line[12] + "" + line[13] + "";
 
             char[] symbol = line.ToCharArray();
             int j = 0;
@@ -234,8 +256,8 @@ namespace SApp.Pages
 
             };
 
-            int yearStart = Convert.ToInt32(YearStart("E:/SAPPGIT/SApp/SApp/Data/ACKO1.csv"));
-            int yearEnd = Convert.ToInt32(YearEnd("E:/SAPPGIT/SApp/SApp/Data/ACKO36.csv"));
+            int yearStart = Convert.ToInt32(YearStart(Directory.GetCurrentDirectory() + "/Data/ACKO1.csv"));
+            int yearEnd = Convert.ToInt32(YearEnd(Directory.GetCurrentDirectory() + "/Data/ACKO1.csv"));
 
 
 

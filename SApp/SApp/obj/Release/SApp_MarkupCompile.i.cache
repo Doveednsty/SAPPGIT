@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-E:\SAPPGIT\SApp\SApp\obj\Debug\
+E:\SAPPGIT\SApp\SApp\obj\Release\
 SApp
 none
 false
-DEBUG;TRACE
+TRACE
 E:\SAPPGIT\SApp\SApp\App.xaml
 5356394465
 
-16-1604177027
+151938380530
 19-1800585372
 MainWindow.xaml;Pages\AnalyticsPage.xaml;Pages\NewsPage.xaml;Pages\SharesPage.xaml;Pages\TrackingPage.xaml;
 

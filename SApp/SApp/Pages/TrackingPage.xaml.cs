@@ -1,5 +1,6 @@
 ﻿using LiveCharts;
 using LiveCharts.Wpf;
+using SApp.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,34 +31,63 @@ namespace SApp.Pages
             ChooseShareCB.ItemsSource = lines;
         }
 
-        public SeriesCollection SeriesCollection { get; set; }
-        public string[] Labels { get; set; }
-        public Func<double, string> YFormatter { get; set; }
+        
+        
 
         private void Trackingbtn_Click(object sender, RoutedEventArgs e)
         {
-            SeriesCollection = new SeriesCollection
+
+
+
+            if (ChooseShareCB.Text == "" || InputPriceTB.Text == "" || Convert.ToDouble(InputPriceTB.Text) < 0)
             {
-                new LineSeries
-                {
-                    Title = (string)ChooseShareCB.SelectedItem,
-                    Values = new ChartValues<double> { 14, 6, 5, 2 ,4 }
-                },
+                MessageBox.Show("Заполните верные данные в данном окне", "Данные не найдены", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                Graphic graphic = new Graphic();
+                graphic.ChosenShare = ChooseShareCB.Text;
+                graphic.BuildChart();
 
-            };
+                ModelTracking modelTracking = new ModelTracking(ChooseShareCB.Text, InputPriceTB.Text);
+                CurrentDateTB.Text = DateTime.Now.ToString();
+                CurrentPriceTB.Text = InputPriceTB.Text;
+                CreateDateTimeTB();
+                CreatePriceTB(modelTracking.Price());
+            }
+            //using (FileStream fs = new FileStream("user.json", FileMode.OpenOrCreate))
+            //{
+            //    Person tom = new Person() { Name = "Tom", Age = 35 };
+            //    await JsonSerializer.SerializeAsync<Person>(fs, tom);
+            //    Console.WriteLine("Data has been saved to file");
+            //}
+            //graphic.Labels = 
 
-            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
-            YFormatter = value => value.ToString("C");
-
-            //modifying the series collection will animate and update the chart
 
 
-            //modifying any series values will also animate and update the chart
-            SeriesCollection[0].Values.Add(5d);
-
-            DataContext = this;
 
 
+
+
+            
+
+
+
+            
+        }
+
+        public void CreateDateTimeTB()
+        {
+            System.Windows.Controls.TextBlock textBlock = new TextBlock();
+            textBlock.Text = DateTime.Now.ToString();
+            DateFamilySP.Children.Add(textBlock);
+        }
+
+        public void CreatePriceTB(string m)
+        {
+            System.Windows.Controls.TextBlock textBlock = new TextBlock();
+            textBlock.Text = m;
+            PriceFamilySP.Children.Add(textBlock);
         }
     }
     

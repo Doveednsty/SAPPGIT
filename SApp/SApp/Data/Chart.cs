@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace SApp.Data
 {
-    public class DateForCharts
+    class Chart
     {
-        public string DateForChart { get; set; }
     }
 }

@@ -43,7 +43,7 @@
                                Margin="0,0,20,0"/>
 
                     <TextBox Width="262"
-                             x:Name="InputPrice"
+                             x:Name="InputPriceTB"
                              Margin="38,0,0,0"/>
                 </StackPanel>
                 
@@ -76,39 +76,32 @@
             </lvc:CartesianChart>
 
 
-            <StackPanel Orientation="Horizontal" Grid.Column="2">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
-                    <TextBlock Text="YYYY:MM:DD" />
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="9*" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.Column="1">
+                
+                    <StackPanel Orientation="Vertical"
+                            x:Name="DateFamilySP">
+                        <TextBlock x:Name="CurrentDateTB" />
+                    </StackPanel>
+
+                    <StackPanel Margin="30,0,0,0"
+                                Orientation="Vertical"
+                                x:Name="PriceFamilySP">
+                        <TextBlock x:Name="CurrentPriceTB"/>
+                    </StackPanel>
                 </StackPanel>
 
-
-
-                <StackPanel Margin="30,0,0,0">
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                    <TextBlock Text="245,04" />
-                </StackPanel>
-            </StackPanel>
+                <Button Grid.Row="1" 
+                        Content="Сохранить историю отслеживания"
+                        FontSize="10"
+                        BorderThickness="0"
+                        Width="200"
+                        Background="#00c21d"/>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

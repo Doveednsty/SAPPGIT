@@ -7,23 +7,20 @@ using System.Threading.Tasks;
 
 namespace SApp.Data
 {
-    public class ChartsData
+    public class DataPrices
     {
         public List<Prices> ReadFile(string filepath)
         {
             var lines = File.ReadAllLines(filepath);
 
-            var data =  from l in lines
+            var data2 = from l in lines
                         let split = l.Split(',')
-                        select new Share
+                        select new Prices
                         {
-                            SECID = split[0],
-                            Name = split[1],
-                            //SecID2 = split[2],
-                            Price = split[3]
+                            Begin = Convert.ToDouble(split[0]),
+                            End = Convert.ToDouble(split[1])
                         };
-            return data.ToList();
+            return data2.ToList();
         }
-        
     }
 }
