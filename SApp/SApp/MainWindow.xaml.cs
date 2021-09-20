@@ -66,6 +66,22 @@ namespace SApp
             Basis.Content = new TrackingPage();
         }
 
+        private void HoverForBtns_Click_MouseEnter(object sender, MouseEventArgs e)
+        {
+            string name = (sender as Button).Name;
+            if (name == "SharesPage_btn") SharesPage_btn.Background = new SolidColorBrush(Color.FromRgb(52, 140, 53));
+            else if (name == "AnalysePage_btn") AnalysePage_btn.Background = new SolidColorBrush(Color.FromRgb(52, 140, 53)); //
+            else if (name == "TrackingPage_btn") TrackingPage_btn.Background = new SolidColorBrush(Color.FromRgb(52, 140, 53));
+            else if (name == "NewsPage_btn") NewsPage_btn.Background = new SolidColorBrush(Color.FromRgb(52, 140, 53));
+        }
         
+        private void HoverDownForBtns_Click_MouseLeave(object sender, MouseEventArgs e)
+        {
+            string name = (sender as Button).Name;
+            if (name == "SharesPage_btn") SharesPage_btn.Background = new SolidColorBrush(Color.FromRgb(68, 189, 70));
+            else if (name == "AnalysePage_btn") AnalysePage_btn.Background = new SolidColorBrush(Color.FromRgb(68, 189, 70));
+            else if (name == "TrackingPage_btn") TrackingPage_btn.Background = new SolidColorBrush(Color.FromRgb(68, 189, 70));
+            else if (name == "NewsPage_btn") NewsPage_btn.Background = new SolidColorBrush(Color.FromRgb(68, 189, 70));
+        } 
     }
 }
