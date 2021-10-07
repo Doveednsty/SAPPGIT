@@ -68,20 +68,23 @@ namespace SApp
 
         private void HoverForBtns_Click_MouseEnter(object sender, MouseEventArgs e)
         {
+            var bc = new BrushConverter();
+            
             string name = (sender as Button).Name;
-            if (name == "SharesPage_btn") SharesPage_btn.Background = new SolidColorBrush(Color.FromRgb(52, 140, 53));
-            else if (name == "AnalysePage_btn") AnalysePage_btn.Background = new SolidColorBrush(Color.FromRgb(52, 140, 53)); //
-            else if (name == "TrackingPage_btn") TrackingPage_btn.Background = new SolidColorBrush(Color.FromRgb(52, 140, 53));
-            else if (name == "NewsPage_btn") NewsPage_btn.Background = new SolidColorBrush(Color.FromRgb(52, 140, 53));
+            if (name == "SharesPage_btn") SharesPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "AnalysePage_btn") AnalysePage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "TrackingPage_btn") TrackingPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "NewsPage_btn") NewsPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
         }
         
         private void HoverDownForBtns_Click_MouseLeave(object sender, MouseEventArgs e)
         {
+            var bc = new BrushConverter();
             string name = (sender as Button).Name;
-            if (name == "SharesPage_btn") SharesPage_btn.Background = new SolidColorBrush(Color.FromRgb(68, 189, 70));
-            else if (name == "AnalysePage_btn") AnalysePage_btn.Background = new SolidColorBrush(Color.FromRgb(68, 189, 70));
-            else if (name == "TrackingPage_btn") TrackingPage_btn.Background = new SolidColorBrush(Color.FromRgb(68, 189, 70));
-            else if (name == "NewsPage_btn") NewsPage_btn.Background = new SolidColorBrush(Color.FromRgb(68, 189, 70));
+            if (name == "SharesPage_btn") SharesPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "AnalysePage_btn") AnalysePage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "TrackingPage_btn") TrackingPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "NewsPage_btn") NewsPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
         } 
     }
 }

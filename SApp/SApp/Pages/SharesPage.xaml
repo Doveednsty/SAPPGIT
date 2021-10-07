@@ -51,8 +51,9 @@
                      Width="1200"
                      Height="700"
                      Margin="0,0,0,110"
-                     HorizontalGridLinesBrush="#5ab9ea" 
-                     VerticalGridLinesBrush="#5ab9ea" 
+                     
+                     HorizontalGridLinesBrush="#282828" 
+                     VerticalGridLinesBrush="#282828" 
                      IsReadOnly="True" FontSize="16"
                      ItemsSource="{Binding}"
                      ColumnWidth="*" RowHeight="40">
