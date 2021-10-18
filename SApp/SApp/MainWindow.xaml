@@ -22,7 +22,10 @@
             Loaded="Basis_Loaded" />
 
 
-        <Grid Height="35" VerticalAlignment="Top" Background="#FF5680E9" Grid.ColumnSpan="2">
+        <Grid Height="35" 
+              VerticalAlignment="Top" 
+              Background="#F0F0F0" 
+              Grid.ColumnSpan="2">
             <TextBlock 
                 Text="SApp"
                 FontSize="20"
@@ -31,76 +34,99 @@
                 VerticalAlignment="Center" />
         </Grid>
 
-        <Grid 
-            Width="50" 
-            Background="#FF5680E9" 
+        <Grid Width="50" 
+            Background="#F0F0F0" 
             HorizontalAlignment="Left">
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
-            </Grid.RowDefinitions>
-            <StackPanel Orientation="Vertical"
-                        Grid.Row="0"
-                        VerticalAlignment="Center">
+
+
+
+            <Grid VerticalAlignment="Top" Height="429">
 
                 <Button BorderThickness="0"
-                        Height="50"
-                        x:Name="SharesPage_btn"
-                        Click="SharesPage_btn_Click"
-                        Margin="0,0,0,50">
-                    <Button.Background>
-                        <ImageBrush 
-                            ImageSource="Assets/sharesicon.png" 
-                            Stretch="Uniform"/>
-                    </Button.Background>
+                    Height="64"
+                    Width="64"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                    x:Name="SharesPage_btn"
+                    Click="SharesPage_btn_Click"
+                    MouseEnter="HoverForBtns_Click_MouseEnter"
+                    MouseLeave="HoverDownForBtns_Click_MouseLeave"
+                    HorizontalAlignment="Center"
+                    Background="Transparent"
+                    Foreground="#282828"
+                    VerticalAlignment="Top"
+                    Margin="0,41,0,0" Cursor="Hand">
+                    <materialDesign:PackIcon
+                        Kind="Finance"
+                        Width="32"
+                        Height="32"
+                        HorizontalAlignment="Center">
+
+                    </materialDesign:PackIcon>
 
                 </Button>
 
-
                 <Button BorderThickness="0"
-                        Height="35"
-                        x:Name="AnalysePage_btn"
-                        Click="AnalysPage_btn_Click"
-                        Margin="0,0,0,50">
-                    <Button.Background>
-                        <ImageBrush 
-                            ImageSource="Assets/analyzeicon.png" 
-                            Stretch="Uniform"/>
-                    </Button.Background>
+                            materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                            Height="64"
+                            Width="64"
+                            MouseEnter="HoverForBtns_Click_MouseEnter" 
+                            MouseLeave="HoverDownForBtns_Click_MouseLeave"
+                            x:Name="AnalysePage_btn"
+                            Background="Transparent"
+                            Foreground="#282828"
+                            Click="AnalysPage_btn_Click"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Margin="0,141,0,0">
+
+                    <materialDesign:PackIcon Kind="BriefcaseSearch"
+                                             materialDesign:ShadowAssist.ShadowDepth="Depth4"
+                                             Width="32"
+                                             Height="32" 
+                                             HorizontalAlignment="Center"/>
                 </Button>
 
-
                 <Button BorderThickness="0"
-                        Height="35"
+                        Height="64"
+                        Width="64"
+                        MouseEnter="HoverForBtns_Click_MouseEnter"
+                        MouseLeave="HoverDownForBtns_Click_MouseLeave"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                        Background="Transparent"
+                        Foreground="#282828"
                         x:Name="NewsPage_btn"
                         Click="NewsPage_btn_Click"
-                        Margin="0,0,0,50">
-                    <Button.Background>
-                        <ImageBrush 
-                            ImageSource="Assets/newsicon.png" 
-                            Stretch="Uniform"/>
-                    </Button.Background>
+                        Margin="0,241,0,0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Newspaper"
+                                            Width="32"
+                                            Height="32" 
+                                            HorizontalAlignment="Center"/>
                 </Button>
 
                 <Button BorderThickness="0"
-                        Height="40"
-                        x:Name="TrackingPage_btn"
-                        Click="TrackingPage_btn_Click">
-                    <Button.Background>
-                        <ImageBrush 
-                            ImageSource="Assets/trackingicon.png" 
-                            Stretch="Uniform"/>
-                    </Button.Background>
+                            Height="64"
+                            
+                            Width="64"
+                            MouseEnter="HoverForBtns_Click_MouseEnter"
+                            MouseLeave="HoverDownForBtns_Click_MouseLeave"
+                            Background="Transparent"
+                            Foreground="#282828"
+                            Margin="0,341,0,0"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            x:Name="TrackingPage_btn"
+                            Click="TrackingPage_btn_Click">
+                    <materialDesign:PackIcon Kind="Radar"
+                                             Width="32"
+                                             Height="32" 
+                                             HorizontalAlignment="Center" />
                 </Button>
-            </StackPanel>
 
-
-
-           
-
-
+            </Grid>
 
         </Grid>
     </Grid>
