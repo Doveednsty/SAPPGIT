@@ -9,6 +9,7 @@ namespace SApp.Data
     public class ModelTracking
     {
         string price = " ";
+        string secid = " ";
         public ModelTracking(string ChosenShare, string UserPrice)
         {
             DataShares dataShares = new DataShares();
@@ -18,6 +19,7 @@ namespace SApp.Data
                 if (d[i].SECID.ToString() == ChosenShare)
                 {
                     price = d[i].Price.ToString();
+                    secid = d[i].SECID.ToString();
                     break;
                 }
             }
@@ -28,6 +30,11 @@ namespace SApp.Data
         {
             return price.ToString();
         }
-        
+
+        public string SECID()
+        {
+            return secid.ToString();
+        }
+
     }
 }

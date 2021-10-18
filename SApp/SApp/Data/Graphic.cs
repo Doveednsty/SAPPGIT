@@ -14,7 +14,7 @@ namespace SApp.Data
         public SeriesCollection SeriesCollection { get; set; }
         public List<string> Labels { get; set; }
         public Func<double, string> YFormatter { get; set; }
-        public void BuildChart()
+        public Graphic()
         {
 
             SeriesCollection = new SeriesCollection
@@ -22,12 +22,12 @@ namespace SApp.Data
                 new LineSeries
                 {
                     Title = ChosenShare,
-                    Values = new ChartValues<double>()
+                    Values = new ChartValues<double>() {1, 2, 3, 5}
                 },
 
             };
 
-            //Labels
+            Labels = new List<string> { "2", "34", "3", "6" };
             YFormatter = value => value.ToString("C");
 
             //modifying the series collection will animate and update the chart

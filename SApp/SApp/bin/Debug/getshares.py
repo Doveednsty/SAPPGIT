@@ -38,8 +38,8 @@ with requests.Session() as session:
     df1.set_index('SECID', inplace=False)
     Table = pd.concat((df_name, df1), axis = 1)
         
-    #print(Table)
-    Table.to_csv('Table.csv', index = False, header = False)
+    print(Table)
+    #Table.to_csv('Table.csv', index = False, header = False)
     #del(Table)
     #os.system('CLS')
 
