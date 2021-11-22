@@ -35,6 +35,7 @@ namespace SApp
             {
                 proc.Kill();
             }
+            
         }
 
         private void AnalysPage_btn_Click(object sender, RoutedEventArgs e)
@@ -59,5 +60,31 @@ namespace SApp
         {
             Basis.Content = new SharesPage();
         }
+
+        private void TrackingPage_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Basis.Content = new TrackingPage();
+        }
+
+        private void HoverForBtns_Click_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var bc = new BrushConverter();
+            
+            string name = (sender as Button).Name;
+            if (name == "SharesPage_btn") SharesPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "AnalysePage_btn") AnalysePage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "TrackingPage_btn") TrackingPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "NewsPage_btn") NewsPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+        }
+        
+        private void HoverDownForBtns_Click_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var bc = new BrushConverter();
+            string name = (sender as Button).Name;
+            if (name == "SharesPage_btn") SharesPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "AnalysePage_btn") AnalysePage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "TrackingPage_btn") TrackingPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+            else if (name == "NewsPage_btn") NewsPage_btn.Background = (Brush)bc.ConvertFrom("#f0f0f0");
+        } 
     }
 }

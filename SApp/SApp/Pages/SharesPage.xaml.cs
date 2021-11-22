@@ -27,18 +27,48 @@ namespace SApp.Pages
         {
             InitializeComponent();
             DataShares dataShares = new DataShares();
-            DataContext = dataShares.ReadFile(@"E:\repos2\SApp\SApp\Scripts\Table.csv");
+            DataContext = dataShares.ReadFile("Table.csv");
         }
+
+
+        async void RefreshingShares() // !!!Parallel Invoke should be!!!!
+        {
+            var time = 900 * 1000; //15 minute
+            await Task.Run(async () =>
+            {
+                while (true) 
+                {
+                    Thread.CurrentThread.IsBackground = true;
+                    Process.Start("getshares");
+                    await Task.Delay(time);
+                    foreach(Process process in Process.GetProcessesByName("getshares"))
+                    {
+                        process.Kill();
+                    }
+                }
+                
+                
+            });
+        }
+
+
 
         private void Refresh_btn_Click(object sender, RoutedEventArgs e)
         {
-            
+            foreach (Process process in Process.GetProcessesByName("getshares"))
+            {
+                process.Kill();
+            }
+            Process.Start("getshares");
+            Thread.Sleep(1000);
+            MessageBox.Show("Данные успешно обновлены", "Обновление данных", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            RefreshingShares();
         }
-           
+
+        
     }
 }

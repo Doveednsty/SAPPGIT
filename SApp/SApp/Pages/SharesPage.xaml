@@ -46,16 +46,15 @@
 
 
 
-                <DataGrid x:Name="SharesDG" 
+                <DataGrid x:Name="SharesDG"
                      Grid.Row="1"
-                     Width="1200"
-                     Height="700"
+                     RowHeight="60"
                      Margin="0,0,0,110"
                      HorizontalGridLinesBrush="#5ab9ea" 
                      VerticalGridLinesBrush="#5ab9ea" 
-                     IsReadOnly="True" FontSize="16"
+                     IsReadOnly="True" FontSize="26"
                      ItemsSource="{Binding}"
-                     ColumnWidth="*" RowHeight="40">
+                     ColumnWidth="*">
 
 
                 </DataGrid>

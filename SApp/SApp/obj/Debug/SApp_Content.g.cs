@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("getshares.exe")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("scripts/getshares.py")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("scripts/getsharestest.py")]
 
 

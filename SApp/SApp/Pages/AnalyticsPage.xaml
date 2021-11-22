@@ -22,7 +22,7 @@
 
     <Grid>
 
-        <Grid Margin="50,0,0,0">
+        <Grid Margin="50,35,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
@@ -76,15 +76,22 @@
               
          
                         <Button Content="За все время"
+                                x:Name="AllTimebtn"
+                                MouseEnter="AllTimebtn_MouseEnter"
+                                MouseLeave="AllTimebtn_MouseLeave"
                                 Margin="0,0,60,0"
                                 BorderThickness="0"
+                                Click="AllTimebtn_Click"
                                 Background="Transparent"
                                 Foreground="#252525">
-                            
+                                
                         </Button>
 
 
                         <Button Content="Год"
+                                x:Name="Yearbtn"
+                                MouseEnter="Yearbtn_MouseEnter"
+                                MouseLeave="Yearbtn_MouseLeave"
                                 Margin="0,0,60,0"
                                 BorderThickness="0"
                                 Background="Transparent"
@@ -94,6 +101,9 @@
 
 
                         <Button Content="6 месяцев"
+                                x:Name="SixMonthbtn"
+                                MouseEnter="SixMonthbtn_MouseEnter"
+                                MouseLeave="SixMonthbtn_MouseLeave"
                                 Margin="0,0,60,0"
                                 BorderThickness="0"
                                 Background="Transparent"
@@ -102,6 +112,9 @@
                         </Button>
 
                         <Button Content="3 месяца"
+                                x:Name="ThreeMonthbtn"
+                                MouseEnter="ThreeMonthbtn_MouseEnter"
+                                MouseLeave="ThreeMonthbtn_MouseLeave"
                                 Margin="0,0,60,0"
                                 BorderThickness="0"
                                 Background="Transparent"
@@ -110,6 +123,9 @@
                         </Button>
 
                         <Button Content="Месяц"
+                                x:Name="Monthbtn"
+                                MouseLeave="Monthbtn_MouseLeave"
+                                MouseEnter="Monthbtn_MouseEnter"
                                 Margin="0,0,60,0"
                                 BorderThickness="0"
                                 Background="Transparent"
@@ -117,6 +133,9 @@
 
                         </Button>
                         <Button Content="Неделя"
+                                x:Name="Weekbtn"
+                                MouseEnter="Weekbtn_MouseEnter"
+                                MouseLeave="Weekbtn_MouseLeave"
                                 Margin="0,0,60,0"
                                 BorderThickness="0"
                                 Background="Transparent"
@@ -125,6 +144,9 @@
                         </Button>
 
                         <Button Content="День"
+                                x:Name="Daybtn"
+                                MouseEnter="Daybtn_MouseEnter"
+                                MouseLeave="Daybtn_MouseLeave"
                                 Margin="0,0,60,0"
                                 BorderThickness="0"
                                 Background="Transparent"
@@ -133,6 +155,9 @@
                         </Button>
 
                         <Button Content="Сейчас"
+                                x:Name="AtNowbtn"
+                                MouseLeave="AtNowbtn_MouseLeave"
+                                MouseEnter="AtNowbtn_MouseEnter"
                                 Margin="0,0,60,0"
                                 BorderThickness="0"
                                 Background="Transparent"
@@ -145,7 +170,11 @@
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
                     Margin="0,0,70,10"
-                    Content="Отслеживать"
+                    Background="Transparent"
+                    BorderBrush="#5ab9ea"
+                    Foreground="#252525"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                    Content="Показать"
                     Grid.Row="0"
                     x:Name="Calc_btn"
                     Click="Calc_btn_Click">

@@ -1,5 +1,8 @@
 '''
 Финальный скрипт к приложению SApp
+
+
+Внесение правок PREVADMITTEDQUOTE
 '''
 
 
@@ -11,13 +14,13 @@ import pandas as pd
 import time
 
 
- 
 
-request_url_name = ('http://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities.json?iss.meta=off&iss.only=securities&securities.columns=SECID,SECNAME')
+
+REQUEST_URL_NAME = ('http://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities.json?iss.meta=off&iss.only=securities&securities.columns=SECID,SECNAME')
 arguments_name = {'securities.columns': ('SECID,'
                                          'SECNAME')}
-request_url_price = ('http://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities.json?iss.dp=comma&iss.meta=off&iss.only=securities&securities.columns=SECID,PREVADMITTEDQUOTE')
-arguments_price = {'securities.columns': ('SECID,'
+REQUEST_URL_PRICE = ('http://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities.json?iss.dp=comma&iss.meta=off&iss.only=securities&securities.columns=SECID,PREVADMITTEDQUOTE')
+ARGUMENTS_PRICE = {'securities.columns': ('SECID,'
                                           'PREVADMITTEDQUOTE,')}
 
 pd.set_option('display.max_columns', None)
@@ -25,22 +28,21 @@ pd.set_option('display.max_rows', None)
 
 while(True):
     with requests.Session() as session:
-        iss = apimoex.ISSClient(session, request_url_name, arguments_name)
+        iss = apimoex.ISSClient(session, REQUEST_URL_NAME, arguments_name)
         data = iss.get()
         df_name = pd.DataFrame(data['securities'])
         df_name.set_index('SECID', inplace=False)
 
 
 
-        iss = apimoex.ISSClient(session, request_url_price, arguments_price)
+        iss = apimoex.ISSClient(session, REQUEST_URL_PRICE, ARGUMENTS_PRICE)
         data = iss.get()
         df1 = pd.DataFrame(data['securities'])
         df1.set_index('SECID', inplace=False)
         Table = pd.concat((df_name, df1), axis = 1)
-        
-        print(Table)
         Table.to_csv('Table.csv', index = False, header = False)
-        time.sleep(1000)
+        #print(Table)
+        time.sleep(900)
         del(Table)
         os.system('CLS')
 
